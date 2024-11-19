@@ -20,6 +20,7 @@ class CityRepository{
                 id : cityId
             }
         })
+        return true
     } catch (error) {
         console.log("Something went wrong in Repository Layer/")
         throw {error}
