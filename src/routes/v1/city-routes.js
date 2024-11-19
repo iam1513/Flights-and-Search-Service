@@ -6,4 +6,16 @@ router.post("/",
     CityController.create
 )
 
+router.get("/:id",
+    CityController.get
+)
+
+router.delete("/:id",
+    CityController.destroy
+)
+
+router.patch("/:id",
+    CityController.update
+)
+
 module.exports = router;
