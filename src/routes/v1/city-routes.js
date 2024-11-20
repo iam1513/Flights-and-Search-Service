@@ -6,6 +6,11 @@ router.post("/",
     CityController.create
 )
 
+router.post("/createMany",
+    CityController.createMany
+)
+
+
 router.get("/:id",
     CityController.get
 )

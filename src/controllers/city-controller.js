@@ -22,6 +22,28 @@ async function create(req,res){
     }
 }
 
+
+async function createMany(req,res){
+    try {
+        const cities = await cityService.createManyCities(req.body)
+        
+        return res.status(201).json({
+            data : cities,
+            success : true,
+            message :'Successfully created Cities',
+            error : {}
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            data : {},
+            success : false,
+            message :'Not able to create Cities',
+            error : error
+        })
+    }
+}
+
 async function destroy(req,res){
     try {
         const response = await cityService.deleteCity(req.params.id)
@@ -107,5 +129,6 @@ module.exports = {
     destroy,
     update,
     get,
-    getAll
+    getAll,
+    createMany
 }
