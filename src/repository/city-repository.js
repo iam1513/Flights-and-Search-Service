@@ -1,4 +1,4 @@
-const { Op } = require("sequelize")
+const { Op } = require("sequelize") // needed for filter
 const { City } = require("../models/index")
 
 class CityRepository{
