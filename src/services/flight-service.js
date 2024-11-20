@@ -11,9 +11,8 @@ class FLightService {
 
     async createFlight(data) {
         try {
-
-            if (!compareTime(data.arrivalTime, data.depatureTime)) {
-                throw { error: "Arrival time should not be lesses than Depature time" }
+            if (!compareTime(data.arrivalTime, data.departureTime)) {
+                throw { error: "Arrival time should not be lesses than Depature time " }
             }
             const airplane = await this.airplaneRepository.getAirplane(data.airplaneId)
             // Get total seats from airplane, destructure the object and add total seats to it.
@@ -25,6 +24,16 @@ class FLightService {
                 }
             )
             return flight
+        } catch (error) {
+            console.log("Something went wrong in Services")
+            throw (error)
+        }
+    }
+
+    async getAllFlights(data){
+        try {
+            const flights = await this.flightRepository.getAllFlights(data);
+            return flights
         } catch (error) {
             console.log("Something went wrong in Services")
             throw (error)
