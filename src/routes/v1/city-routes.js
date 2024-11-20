@@ -10,6 +10,10 @@ router.get("/:id",
     CityController.get
 )
 
+router.get("/",
+    CityController.getAll
+)
+
 router.delete("/:id",
     CityController.destroy
 )
