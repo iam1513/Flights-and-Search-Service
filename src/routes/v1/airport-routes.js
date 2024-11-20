@@ -12,6 +12,10 @@ router.get("/:id",
     AirportController.get
 )
 
+router.get("/",
+    AirportController.getAll
+)
+
 router.patch("/:id",
     AirportController.update
 )
