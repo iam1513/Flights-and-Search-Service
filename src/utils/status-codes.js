@@ -1,3 +1,4 @@
+// Freeze won't allow object to be changed anywhere 
 const ClientErrorCodes = Object.freeze({
     BAD_REQUEST: 400,
     UNAUTHORISED: 401,

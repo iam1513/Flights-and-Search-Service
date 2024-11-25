@@ -14,4 +14,9 @@ router.get("/",
 
 )
 
+router.get("/:id",
+    FlightController.get
+
+)
+
 module.exports = router
