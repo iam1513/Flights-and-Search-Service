@@ -19,4 +19,8 @@ router.get("/:id",
 
 )
 
+router.patch("/:id",
+    FlightController.update
+
+)
 module.exports = router

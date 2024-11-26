@@ -35,7 +35,7 @@ class FlightRepository {
             // Object.assign(filter, { price: { [Op.lte]: data.maxPrice } });
             priceFilter.push(filter, { price: { [Op.lte]: data.maxPrice } })
         }
-        
+
         return filter;
     }
 
@@ -71,6 +71,23 @@ class FlightRepository {
             })
             return flight
 
+        } catch (error) {
+            console.log("Something went wrong in Repository")
+            throw (error)
+        }
+    }
+
+    async updateFlight(flightId, data) {
+        try {
+            await Flights.update(data,
+                {
+                    where: {
+                        id: flightId
+                    }
+                }
+            )
+
+            return true
         } catch (error) {
             console.log("Something went wrong in Repository")
             throw (error)
